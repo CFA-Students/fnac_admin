@@ -1,0 +1,97 @@
+// import 'package:flushbar/flushbar.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../routes.dart';
+import './home_bloc.dart';
+import './home_event.dart';
+import './home_state.dart';
+
+class HomePage extends StatelessWidget {
+  final String title;
+
+  const HomePage({Key key, this.title = 'Home page'}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.title),
+      ),
+      body: Center(
+        child: BlocProvider<CounterBloc>(
+          // le Bloc à charger
+          create: (_) => CounterBloc(),
+          // et à chaque changement du Bloc (= données), ça va update automatiquement
+          child: BlocListener<CounterBloc, CounterState>(
+            // On indique ce qu'on doit notifier à chaque update
+            listener: (context, state) {
+              // Text('State Changed');
+              // Flushbar(
+              //   flushbarStyle: FlushbarStyle.FLOATING,
+              //   message: "The counter has been altered!",
+              //   duration: Duration(seconds: 1),
+              // )..show(context);
+            },
+            // On indique ce qu'il faut update à chaque changement
+            // child: const ButtonsAndText(),
+            child: const ButtonsAndText(),
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context)
+            ?.pushNamed(RouteGenerator.passwordGeneratorPage),
+        tooltip: 'Generate',
+        child: const Icon(Icons.vpn_key),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class ButtonsAndText extends StatelessWidget {
+  const ButtonsAndText();
+
+  Widget build(BuildContext context) {
+    // ignore: close_sinks
+    final counterBloc = context.read<CounterBloc>();
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        const Text('Compteur basique :', style: const TextStyle(fontSize: 25)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            TextButton(
+              // envoi de l'event "Increment"
+              onPressed: () => counterBloc.add(const Increment()),
+              child: const Text(
+                "+1",
+                style: const TextStyle(color: Colors.green, fontSize: 25),
+              ),
+            ),
+            // Affichage du state toujours à jour
+            BlocBuilder<CounterBloc, CounterState>(
+              builder: (context, state) {
+                return Text(
+                  "${state.count}",
+                  style: const TextStyle(fontSize: 30),
+                );
+              },
+            ),
+            TextButton(
+              // envoi de l'event "Decrement"
+              onPressed: () => counterBloc.add(const Decrement()),
+              child: const Text(
+                "-1",
+                style: const TextStyle(color: Colors.red, fontSize: 25),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
