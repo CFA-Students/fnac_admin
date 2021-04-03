@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import './routes/generator_config/generator_page.dart';
-import './routes/home/home_page.dart';
+import '../routes/generator_config/generator_page.dart';
+import '../routes/home/home_page.dart';
 
 class RouteGenerator {
   static const homePage = '/';

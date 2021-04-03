@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../routes.dart';
+import '../../routing/routes.dart';
+import '../../routing/drawer_menu.dart';
 import './home_bloc.dart';
 import './home_event.dart';
 import './home_state.dart';
@@ -23,22 +24,10 @@ class HomePage extends StatelessWidget {
           // le Bloc à charger
           create: (_) => CounterBloc(),
           // et à chaque changement du Bloc (= données), ça va update automatiquement
-          child: BlocListener<CounterBloc, CounterState>(
-            // On indique ce qu'on doit notifier à chaque update
-            listener: (context, state) {
-              // Text('State Changed');
-              // Flushbar(
-              //   flushbarStyle: FlushbarStyle.FLOATING,
-              //   message: "The counter has been altered!",
-              //   duration: Duration(seconds: 1),
-              // )..show(context);
-            },
-            // On indique ce qu'il faut update à chaque changement
-            // child: const ButtonsAndText(),
-            child: const ButtonsAndText(),
-          ),
+          child: const ButtonsAndText(),
         ),
       ),
+      drawer: const DrawerMenu(),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.of(context)
             ?.pushNamed(RouteGenerator.passwordGeneratorPage),
