@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../routing/routes.dart';
 import '../../routing/drawer_menu.dart';
 import './home_bloc.dart';
 import './home_event.dart';
@@ -17,7 +16,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.title),
+        title: Text(title),
       ),
       body: Center(
         child: BlocProvider<CounterBloc>(
@@ -28,13 +27,6 @@ class HomePage extends StatelessWidget {
         ),
       ),
       drawer: const DrawerMenu(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context)
-            ?.pushNamed(RouteGenerator.passwordGeneratorPage),
-        tooltip: 'Generate',
-        child: const Icon(Icons.vpn_key),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

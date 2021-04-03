@@ -12,7 +12,7 @@ class PpeAdminApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) => 'Password Generator',
+      onGenerateTitle: (context) => 'Fnac Admin',
       initialRoute: RouteGenerator.homePage,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
