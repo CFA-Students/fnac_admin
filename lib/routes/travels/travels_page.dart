@@ -23,7 +23,7 @@ class TravelsPageContent extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
+      scrollDirection: Axis.horizontal,
       child: DataTable(
         sortColumnIndex: 1,
         sortAscending: false,
