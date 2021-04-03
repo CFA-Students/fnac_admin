@@ -5,10 +5,12 @@ import './routing/routes.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();
-  runApp(PpeAdminApp());
+  runApp(const PpeAdminApp());
 }
 
 class PpeAdminApp extends StatelessWidget {
+  const PpeAdminApp();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

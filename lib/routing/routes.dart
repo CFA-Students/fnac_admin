@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ppe_admin/routes/travels/travels_page.dart';
 
 import '../routes/home/home_page.dart';
 
 class RouteGenerator {
   static const homePage = '/';
-  static const passwordGeneratorPage = '/password-generator';
+  static const travelsPage = '/travels';
 
   RouteGenerator._();
 
@@ -12,6 +13,8 @@ class RouteGenerator {
     switch (settings.name) {
       case homePage:
         return MaterialPageRoute(builder: (_) => const HomePage());
+      case travelsPage:
+        return MaterialPageRoute(builder: (_) => const TravelsPage());
       default:
         throw FormatException("Routes not found");
     }

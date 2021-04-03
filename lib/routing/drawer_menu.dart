@@ -32,27 +32,25 @@ class DrawerMenu extends StatelessWidget {
               Icons.flight,
               color: Colors.teal,
             ),
-            title: const Text('Travel'),
+            title: const Text('Travels'),
             onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.homePage),
+                Navigator.of(context)?.pushNamed(RouteGenerator.travelsPage),
           ),
           ListTile(
             leading: const Icon(
               Icons.person,
               color: Colors.teal,
             ),
-            title: const Text('User'),
-            onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.homePage),
+            title: const Text('Users'),
+            onTap: () => {},
           ),
           ListTile(
             leading: const Icon(
               Icons.category,
               color: Colors.teal,
             ),
-            title: const Text('Category'),
-            onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.homePage),
+            title: const Text('Categories'),
+            onTap: () => {},
           ),
           const DrawerSectionTitle('Other'),
           ListTile(
@@ -61,8 +59,7 @@ class DrawerMenu extends StatelessWidget {
               color: Colors.teal,
             ),
             title: const Text('Contact'),
-            onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.homePage),
+            onTap: () => {},
           ),
         ],
       ),
