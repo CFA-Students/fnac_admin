@@ -20,7 +20,7 @@ class DrawerMenu extends StatelessWidget {
             ),
             title: const Text('Home'),
             onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.homePage),
+                Navigator.of(context).pushNamed(RouteGenerator.homePage),
           ),
           const Divider(
             indent: 15,
@@ -34,7 +34,7 @@ class DrawerMenu extends StatelessWidget {
             ),
             title: const Text('Travels'),
             onTap: () =>
-                Navigator.of(context)?.pushNamed(RouteGenerator.travelsPage),
+                Navigator.of(context).pushNamed(RouteGenerator.travelsPage),
           ),
           ListTile(
             leading: const Icon(
