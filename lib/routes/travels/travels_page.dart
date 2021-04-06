@@ -6,7 +6,7 @@ import '../../routing/drawer_menu.dart';
 class TravelsPage extends StatelessWidget {
   final title = 'Table : Travel';
 
-  const TravelsPage({Key key}) : super(key: key);
+  const TravelsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import '../../routing/drawer_menu.dart';
 class HomePage extends StatelessWidget {
   final title = 'Home';
 
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
