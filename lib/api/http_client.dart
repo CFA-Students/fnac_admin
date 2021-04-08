@@ -2,18 +2,19 @@ import 'package:dio/dio.dart';
 
 import './json_parsers/json_parser.dart';
 
-class ResquestREST {
+class RequestREST {
   final String endpoint;
   final Map<String, String> data;
 
-  const ResquestREST({
+  const RequestREST({
     required this.endpoint,
     this.data = const {},
   });
 
   static final _client = Dio(
     BaseOptions(
-      baseUrl: "http://localhost:3000/",
+      baseUrl: "http://10.0.2.2:3000/",
+      receiveDataWhenStatusError: true,
       connectTimeout: 3000,
       receiveTimeout: 3000,
     ),

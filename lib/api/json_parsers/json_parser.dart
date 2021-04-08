@@ -1,6 +1,7 @@
 library json_parser;
 
-export 'object_decoder.dart';
+export './object_decoder.dart';
+export './travel_parser.dart';
 
 abstract class JsonParser<T> {
   const JsonParser();
