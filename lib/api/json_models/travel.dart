@@ -1,15 +1,22 @@
-// part 'travel.g.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-// @JsonSerializable(explicitToJson: true)
+part 'travel.g.dart';
+
+@JsonSerializable(explicitToJson: true)
 class TravelObject {
   final List<Travel> data;
+
   const TravelObject(this.data);
-  // factory TodoObject.fromJson(Map<String, dynamic> json) => ...
-  // Map<String, dynamic> toJson() => ...
+
+  factory TravelObject.fromJson(Map<String, dynamic> json) =>
+      _$TravelObjectFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TravelObjectToJson(this);
 }
 
-// @JsonSerializable()
+@JsonSerializable()
 class Travel {
+  @JsonKey(required: true)
   final int id;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -32,7 +39,7 @@ class Travel {
     this.mainPhoto,
   );
 
-  // factory Travel.fromJson(Map<String, dynamic> json) => _$TravelFromJson(json);
+  factory Travel.fromJson(Map<String, dynamic> json) => _$TravelFromJson(json);
 
-  // Map<String, dynamic> toJson() => _$TravelToJson(this);
+  Map<String, dynamic> toJson() => _$TravelToJson(this);
 }
