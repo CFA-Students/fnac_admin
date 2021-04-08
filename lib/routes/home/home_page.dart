@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../../routing/drawer_menu.dart';
 
 class HomePage extends StatelessWidget {
-  final title = 'Home';
+  static const _title = 'Home';
 
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(title: const Text(_title)),
       drawer: const DrawerMenu(),
       body: const Center(child: const HomePageContent()),
     );
