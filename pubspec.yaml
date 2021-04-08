@@ -14,6 +14,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  # dio: 
+  # path_provider :
+  # google_fonts : 
+  # hydrated_bloc :
+  # intl :
+  # cached_network_image :
+  # json_annotation :
+  # json_serializable :
 
 dev_dependencies:
   flutter_test:
