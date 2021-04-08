@@ -1,5 +1,13 @@
 // part 'travel.g.dart';
 
+// @JsonSerializable(explicitToJson: true)
+class TravelObject {
+  final List<Travel> data;
+  const TravelObject(this.data);
+  // factory TodoObject.fromJson(Map<String, dynamic> json) => ...
+  // Map<String, dynamic> toJson() => ...
+}
+
 // @JsonSerializable()
 class Travel {
   final int id;
