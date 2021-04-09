@@ -84,14 +84,12 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
       future: travels,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-// Remember that 'snapshot.data' returns a nullable
-          final data = snapshot.data;
-          if (data != null) {
+          // Remember that 'snapshot.data' returns a nullable
+          final data = snapshot.data ?? <Travel>[];
+          if (data.length > 0) {
             return ListView.builder(
               itemCount: data.length,
-              itemBuilder: (context, index) {
-                return Text('${travels.toString()}');
-              },
+              itemBuilder: (context, index) => TravelItem(data[index]),
             );
           } else {
             return const ErrorWidget();
@@ -104,6 +102,18 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
           child: CircularProgressIndicator(),
         );
       },
+    );
+  }
+}
+
+class TravelItem extends StatelessWidget {
+  final Travel travel;
+  const TravelItem(this.travel);
+
+  @override
+  Widget build(_) {
+    return ListTile(
+      title: Text('${travel.id} : ${travel.destination}, ${travel.price}'),
     );
   }
 }

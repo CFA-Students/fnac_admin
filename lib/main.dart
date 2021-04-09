@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import './app_bloc_observer.dart';
 import './routing/routes.dart';
 
@@ -15,7 +16,7 @@ class PpeAdminApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (context) => 'Fnac Admin',
-      initialRoute: RouteGenerator.homePage,
+      initialRoute: RouteGenerator.travelsPage,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         primarySwatch: Colors.red,

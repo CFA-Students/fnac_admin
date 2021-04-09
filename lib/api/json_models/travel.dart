@@ -42,4 +42,7 @@ class Travel {
   factory Travel.fromJson(Map<String, dynamic> json) => _$TravelFromJson(json);
 
   Map<String, dynamic> toJson() => _$TravelToJson(this);
+
+  // @override
+  // String toString() => 'travel n $this.id: ${this.destination}, ${this.createdAt} and ${this.updatedAt}';
 }
