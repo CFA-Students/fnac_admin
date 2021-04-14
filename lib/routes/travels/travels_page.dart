@@ -92,7 +92,7 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
               itemBuilder: (context, index) => TravelItem(data[index]),
             );
           } else {
-            return const ErrorWidget();
+            return const NoDataWidget();
           }
         }
         if (snapshot.hasError) {
@@ -125,5 +125,14 @@ class ErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text('Error');
+  }
+}
+
+class NoDataWidget extends StatelessWidget {
+  const NoDataWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Aucune donnée');
   }
 }
