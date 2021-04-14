@@ -16,7 +16,7 @@ class PpeAdminApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateTitle: (context) => 'Fnac Admin',
-      initialRoute: RouteGenerator.travelsPage,
+      initialRoute: RouteGenerator.homePage,
       onGenerateRoute: RouteGenerator.generateRoute,
       theme: ThemeData(
         primarySwatch: Colors.red,

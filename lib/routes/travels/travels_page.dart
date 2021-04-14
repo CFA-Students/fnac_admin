@@ -114,6 +114,7 @@ class TravelItem extends StatelessWidget {
   Widget build(_) {
     return ListTile(
       title: Text('${travel.id} : ${travel.destination}, ${travel.price}'),
+      onTap: () {},
     );
   }
 }
