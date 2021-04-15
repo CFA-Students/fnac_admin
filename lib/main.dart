@@ -18,9 +18,7 @@ class PpeAdminApp extends StatelessWidget {
       onGenerateTitle: (context) => 'Fnac Admin',
       initialRoute: RouteGenerator.homePage,
       onGenerateRoute: RouteGenerator.generateRoute,
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
+      theme: ThemeData(primarySwatch: Colors.red),
       debugShowCheckedModeBanner: false,
     );
   }

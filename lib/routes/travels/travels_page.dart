@@ -86,11 +86,10 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
         if (snapshot.hasData) {
           // Remember that 'snapshot.data' returns a nullable
           final data = snapshot.data ?? <Travel>[];
-          if (data.length > 0) {
-            return TravelItemList(data);
-          } else {
-            return const NoDataWidget();
-          }
+          print(data[0].createdAt);
+          return (data.length > 0)
+              ? TravelItemList(data)
+              : const NoDataWidget();
         }
         if (snapshot.hasError) {
           return const ErrorWidget();
