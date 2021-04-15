@@ -87,10 +87,7 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
           // Remember that 'snapshot.data' returns a nullable
           final data = snapshot.data ?? <Travel>[];
           if (data.length > 0) {
-            return ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) => TravelItem(data[index]),
-            );
+            return TravelItemList(data);
           } else {
             return const NoDataWidget();
           }
@@ -99,11 +96,22 @@ class _TravelsPageContentState extends State<TravelsPageContent> {
           return const ErrorWidget();
         }
         return const Center(
-          child: CircularProgressIndicator(),
+          child: const CircularProgressIndicator(),
         );
       },
     );
   }
+}
+
+class TravelItemList extends StatelessWidget {
+  final List<Travel> data;
+  const TravelItemList(this.data);
+
+  @override
+  Widget build(_) => ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) => TravelItem(data[index]),
+      );
 }
 
 class TravelItem extends StatelessWidget {
@@ -123,16 +131,12 @@ class ErrorWidget extends StatelessWidget {
   const ErrorWidget();
 
   @override
-  Widget build(BuildContext context) {
-    return Text('Error');
-  }
+  Widget build(_) => Text('Error');
 }
 
 class NoDataWidget extends StatelessWidget {
   const NoDataWidget();
 
   @override
-  Widget build(BuildContext context) {
-    return Text('Aucune donnée');
-  }
+  Widget build(_) => Text('Aucune donnée');
 }
