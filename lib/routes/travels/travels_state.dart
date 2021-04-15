@@ -4,13 +4,12 @@ import '../../api/json_models/travel.dart';
 
 class TravelsState extends Equatable {
   final List<Travel> travels;
-  final Map<String, dynamic> travel;
+  final travel;
 
   const TravelsState({
-    travels,
-    travel,
-  })  : travels = const <Travel>[],
-        travel = const {};
+    this.travels = const <Travel>[],
+    this.travel = const {},
+  });
 
   @override
   List<Object> get props => [travels, travel];
