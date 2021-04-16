@@ -12,17 +12,21 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case homePage:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(
+          builder: (_) => const HomePage(),
+        );
       case travelsPage:
-        return MaterialPageRoute(builder: (_) => const TravelsPage());
+        return MaterialPageRoute(
+          builder: (_) => const TravelsPage(),
+        );
       default:
-        throw FormatException("Routes not found");
+        throw FormatException('Routes not found');
     }
   }
 }
 
-class RouteExeption implements Exception {
-  final String message;
+// class RouteExeption implements Exception {
+//   final String message;
 
-  const RouteExeption(this.message);
-}
+//   const RouteExeption(this.message);
+// }
