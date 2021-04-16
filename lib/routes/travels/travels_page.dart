@@ -28,50 +28,16 @@ class TravelsPageBlocReload extends StatelessWidget {
   const TravelsPageBlocReload();
 
   @override
-  Widget build(BuildContext context) => BlocProvider<TravelsBloc>(
-        create: (context) => TravelsBloc()..add(const GetTravels()),
-        child: BlocBuilder<TravelsBloc, TravelsState>(
-          builder: (context, state) {
-            return (state.travels.length > 0)
-                ? TravelsList(state.travels)
-                : const NoDataTextWidget();
-          },
-        ),
+  Widget build(BuildContext context) => BlocBuilder<TravelsBloc, TravelsState>(
+        builder: (context, state) {
+          return (state.travels.length > 0)
+              ? TravelsList(state.travels)
+              : const NoDataTextWidget();
+        },
       );
 }
 
-class TravelsPageContent extends StatelessWidget {
-  const TravelsPageContent();
-
-  @override
-  Widget build(BuildContext context) {
-    final travelsBloc = context.read<TravelsBloc>();
-
-    if (travelsBloc.state.travels.length > 0) {
-      return TravelsList(travelsBloc.state.travels);
-    }
-
-    travelsBloc.add(GetTravels());
-    return const NoDataTextWidget();
-  }
-}
-
-// class TravelsPageContent extends StatefulWidget {
-//   const TravelsPageContent();
-
-//   @override
-//   _TravelsPageContentState createState() => _TravelsPageContentState();
-// }
-
 // class _TravelsPageContentState extends State<TravelsPageContent> {
-//   late final Future<List<Travel>> travels;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     travels = RequestREST(endpoint: '/travels')
-//         .executeGet<List<Travel>>(const TravelParser());
-//   }
 
 //   @override
 //   Widget build(BuildContext context) {
