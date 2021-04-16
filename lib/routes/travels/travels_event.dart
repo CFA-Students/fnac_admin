@@ -7,6 +7,10 @@ abstract class TravelsEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class ReloadTravels extends TravelsEvent {
+  const ReloadTravels();
+}
+
 class GetTravels extends TravelsEvent {
   const GetTravels();
 }

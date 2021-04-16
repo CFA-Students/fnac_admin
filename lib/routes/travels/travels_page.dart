@@ -8,16 +8,15 @@ import '../../api/json_models/travel.dart';
 import '../../routing/drawer_menu.dart';
 
 class TravelsPage extends StatelessWidget {
-  final String title;
-
-  const TravelsPage({Key? key, title})
-      : title = 'Table : Travel',
+  final String _title;
+  const TravelsPage({Key? key, String title = 'Table : Travel'})
+      : _title = title,
         super(key: key);
 
   @override
   Widget build(_) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(title: Text(_title)),
       drawer: const DrawerMenu(),
       body: const Center(child: const TravelsPageBlocReload()),
     );
