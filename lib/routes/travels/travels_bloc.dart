@@ -18,7 +18,11 @@ class TravelsBloc extends Bloc<TravelsEvent, TravelsState> {
         yield TravelsState(travels: await _getTravels());
       }
     } else if (event is GetTravel) {
-      yield TravelsState(travel: travels[0].toJson());
+      for (var travel in travels) {
+        if (travel.id == event.id) {
+          yield TravelsState(travel: travel.toJson());
+        }
+      }
     } else {
       throw Error();
     }

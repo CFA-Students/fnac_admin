@@ -16,7 +16,8 @@ class GetTravels extends TravelsEvent {
 }
 
 class GetTravel extends TravelsEvent {
-  const GetTravel();
+  final int id;
+  const GetTravel(this.id);
 }
 
 class PostTravel extends TravelsEvent {
