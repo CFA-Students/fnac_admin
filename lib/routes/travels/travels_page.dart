@@ -34,28 +34,9 @@ class TravelsPageBlocReload extends StatelessWidget {
       );
 }
 
-// class _TravelsPageContentState extends State<TravelsPageContent> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<List<Travel>>(
-//       future: travels,
-//       builder: (context, snapshot) {
-//         if (snapshot.hasData) {
-//           // Remember that 'snapshot.data' returns a nullable
-//           final data = snapshot.data ?? <Travel>[];
-//           return (data.length > 0) ? TravelsList(data) : const NoDataTextWidget();
-//         }
-//         if (snapshot.hasError) {
-//           return const ErrorTextWidget();
-//         }
-//         return const Center(
-//           child: const CircularProgressIndicator(),
-//         );
-//       },
-//     );
-//   }
-// }
+// return const Center(
+//   child: const CircularProgressIndicator(),
+// );
 
 class TravelsList extends StatelessWidget {
   final List<Travel> data;

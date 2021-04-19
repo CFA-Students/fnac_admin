@@ -42,5 +42,5 @@ class TravelsBloc extends Bloc<TravelsEvent, TravelsState> {
 
   Future<List<Travel>> _getTravels() async =>
       await RequestREST(endpoint: '/travels')
-          .executeGet<List<Travel>>(const TravelParser());
+          .executeGet<List<Travel>>(const TravelsParser());
 }
