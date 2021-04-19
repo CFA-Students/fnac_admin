@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'travels_bloc.dart';
 
-import './travels_state.dart';
-import './travels_bloc.dart';
-import './travels_event.dart';
-import '../../api/json_models/travel.dart';
-import '../../routing/drawer_menu.dart';
+import '/api/json_models/travel.dart';
+import '/routing/drawer_menu.dart';
 
 class TravelsPage extends StatelessWidget {
   final String _title;
@@ -85,7 +83,7 @@ class TravelsListItem extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       title: Text(
-        '${data.destination}',
+        'Voyage en ${data.destination}',
         style: TextStyle(fontSize: 18),
       ),
       onTap: () {},

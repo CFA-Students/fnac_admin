@@ -1,10 +1,16 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+library travels_bloc;
 
-import '../../api/json_parsers/json_parser.dart';
-import '../../api/http_client.dart';
-import '../../api/json_models/travel.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ppe_admin/api/json_parsers/json_parser.dart';
+
+import '/api/http_client.dart';
+import '/api/json_models/travel.dart';
 import './travels_event.dart';
 import './travels_state.dart';
+
+export './travels_bloc.dart';
+export './travels_event.dart';
+export './travels_state.dart';
 
 class TravelsBloc extends Bloc<TravelsEvent, TravelsState> {
   TravelsBloc() : super(TravelsState());
@@ -28,13 +34,13 @@ class TravelsBloc extends Bloc<TravelsEvent, TravelsState> {
     }
   }
 
-  Future<List<Travel>> _getTravels() async =>
-      await RequestREST(endpoint: '/travels')
-          .executeGet<List<Travel>>(const TravelParser());
-
   @override
   void onChange(Change<TravelsState> change) {
     print(change);
     super.onChange(change);
   }
+
+  Future<List<Travel>> _getTravels() async =>
+      await RequestREST(endpoint: '/travels')
+          .executeGet<List<Travel>>(const TravelParser());
 }
