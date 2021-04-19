@@ -20,7 +20,7 @@ class TravelsBloc extends Bloc<TravelsEvent, TravelsState> {
     } else if (event is GetTravel) {
       for (var travel in travels) {
         if (travel.id == event.id) {
-          yield TravelsState(travel: travel.toJson());
+          yield TravelsState(travel: travel);
         }
       }
     } else {
