@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../../api/json_models/travel.dart';
+import '/api/json_models/travel.dart';
 
 class TravelsState extends Equatable {
   final List<Travel> travels;

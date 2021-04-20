@@ -11,9 +11,9 @@ abstract class QueryRepository<T> {
 
   Future<T> find(int id);
 
-  Future<void> update(int id);
+  Future<bool> update(int id);
 
-  Future<void> delete(int id);
+  Future<bool> delete(int id);
 }
 
 class TravelsRepository extends QueryRepository<Travel> {
@@ -42,22 +42,26 @@ class TravelsRepository extends QueryRepository<Travel> {
   }
 
   @override
-  Future<void> update(int id) async {
+  Future<bool> update(int id) async {
     try {
       await RequestREST(endpoint: '/travels/$id')
           .executePost<Travel>(const TravelParser());
+      return true;
     } on Exception catch (e) {
       debugPrint(e.toString());
+      return false;
     }
   }
 
   @override
-  Future<void> delete(int id) async {
+  Future<bool> delete(int id) async {
     try {
       await RequestREST(endpoint: '/travels/$id')
           .executePost<Travel>(const TravelParser());
+      return true;
     } on Exception catch (e) {
       debugPrint(e.toString());
+      return false;
     }
   }
 }

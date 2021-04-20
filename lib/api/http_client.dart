@@ -7,7 +7,7 @@ class RequestREST {
   final Map<String, String> data;
   final String endpoint;
 
-  static const _API_URL = 'http://10.0.2.2:3000/';
+  static const _API_URL = 'http://localhost:3000/';
 
   static final _client = Dio(
     BaseOptions(
